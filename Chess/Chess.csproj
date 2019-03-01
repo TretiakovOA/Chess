@@ -52,8 +52,26 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\Figures\ChessKnight.cs" />
+    <Compile Include="Model\ChessBoard.cs" />
+    <Compile Include="Model\ChessField.cs" />
+    <Compile Include="Model\Figures\ChessFigure.cs" />
+    <Compile Include="Model\ChessGame.cs" />
+    <Compile Include="Model\Figures\ChessBishop.cs" />
+    <Compile Include="Model\Figures\ChessQueen.cs" />
+    <Compile Include="Model\Figures\ChessKing.cs" />
+    <Compile Include="Model\ChessMove.cs" />
+    <Compile Include="Model\ChessPlayer.cs" />
+    <Compile Include="Model\Figures\ChessPawn.cs" />
+    <Compile Include="Model\Figures\ChessRook.cs" />
+    <Compile Include="Model\ChessRoque.cs" />
+    <Compile Include="Model\Color.cs" />
+    <Compile Include="Model\Result.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
