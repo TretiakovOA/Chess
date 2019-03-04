@@ -8,12 +8,12 @@ namespace Chess.Model
 {
     public class ChessPlayer
     {
+        public Color Color { get; set; }
         public ChessFigure[] Figures { get; private set; }
-        public List<ChessMove> PreviousMoves { get; private set; }
 
         public ChessPlayer(Color color, ChessBoard board)
         {
-            PreviousMoves = new List<ChessMove>();
+            Color = color;
             Figures = new ChessFigure[16];
             Figures[0] = new ChessKing(color, board);
             Figures[1] = new ChessQueen(color, board);
@@ -33,13 +33,47 @@ namespace Chess.Model
             Figures[15] = new ChessPawn(color, board, 'H');
         }
 
-        public void Move(ChessFigure figure, ChessField toField)
+        public void FindFieldsToMove(ChessBoard board)
         {
-
+            foreach (var figure in Figures)
+            {
+                figure.FindFieldsToMove(board);
+            }
         }
-        public void FinishGame(bool toDraw)
+        
+        public bool IsRoquePossible(bool firstRook, ChessGame game)
         {
+            ChessKing king = Figures.OfType<ChessKing>().First();
+            if (!king.IsRoquePossible()) return false;
+            List<ChessRook> rooks = Figures.OfType<ChessRook>().ToList();
+            ChessRook rook = firstRook
+                ? rooks.FirstOrDefault(r => r.CurrentField.Column == 'A')
+                : rooks.FirstOrDefault(r => r.CurrentField.Column == 'H');
+            if (rook == null) return false;
+            if (!rook.IsRoquePossible()) return false;
+            
+            int row = Color == Color.WHITE ? 1 : 8;
+            if (game.IsFieldUnderAttack(Color, row, 'E')) return false;
 
+            List<ChessField> fieldsBetween = new List<ChessField>();
+            if (firstRook)
+            {
+                fieldsBetween.Add(game.Board.GetField(row, 'B'));
+                fieldsBetween.Add(game.Board.GetField(row, 'C'));
+                fieldsBetween.Add(game.Board.GetField(row, 'D'));
+            }
+            else
+            {
+                fieldsBetween.Add(game.Board.GetField(row, 'F'));
+                fieldsBetween.Add(game.Board.GetField(row, 'G'));
+            }
+            foreach (ChessField field in fieldsBetween)
+            {
+                if (field.Status != FieldStatus.EMPTY) return false;
+                if (game.IsFieldUnderAttack(Color, field.Row, field.Column)) return false;
+            }
+
+            return true;
         }
     }
 }

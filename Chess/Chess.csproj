@@ -52,6 +52,7 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\FieldStatus.cs" />
     <Compile Include="Model\Figures\ChessKnight.cs" />
     <Compile Include="Model\ChessBoard.cs" />
     <Compile Include="Model\ChessField.cs" />
@@ -64,7 +65,6 @@
     <Compile Include="Model\ChessPlayer.cs" />
     <Compile Include="Model\Figures\ChessPawn.cs" />
     <Compile Include="Model\Figures\ChessRook.cs" />
-    <Compile Include="Model\ChessRoque.cs" />
     <Compile Include="Model\Color.cs" />
     <Compile Include="Model\Result.cs" />
     <Compile Include="Program.cs" />

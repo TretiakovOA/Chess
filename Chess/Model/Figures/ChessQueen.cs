@@ -5,18 +5,26 @@
         public ChessQueen(Color color, ChessBoard board) : base(color)
         {
             CurrentField = color == Color.WHITE ? 
-                board.GetField(1, 'D') : 
-                board.GetField(8, 'D');
+                board.OccupyField(1, 'D', Color.WHITE) : 
+                board.OccupyField(8, 'D', Color.BLACK);
+        }
+        
+        public override char GetSymbol()
+        {
+            return Color == Color.WHITE ? '\u2655' : '\u265b';
         }
 
-        public override void Move()
+        public override void FindFieldsToMove(ChessBoard board)
         {
-            
-        }
-
-        public override char GetSymbol(Color color)
-        {
-            return color == Color.WHITE ? '\u2655' : '\u265b';
+            if (IsKilled) return;
+            FieldsToMove.Clear();
+            FieldStatus ownStatus = Color == Color.WHITE
+                ? FieldStatus.OCCUPIED_WITH_WHITE
+                : FieldStatus.OCCUPIED_WITH_BLACK;
+            FindFieldsInRow(board, ownStatus);
+            FindFieldsInColumn(board, ownStatus);
+            FindFieldsUpwards(board, ownStatus);
+            FindFieldsDownwards(board, ownStatus);
         }
     }
 }

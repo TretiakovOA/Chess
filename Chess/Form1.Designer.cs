@@ -51,19 +51,19 @@
             this.labelWhite.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelWhite.Location = new System.Drawing.Point(667, 15);
             this.labelWhite.Name = "labelWhite";
-            this.labelWhite.Size = new System.Drawing.Size(301, 42);
+            this.labelWhite.Size = new System.Drawing.Size(307, 42);
             this.labelWhite.TabIndex = 1;
-            this.labelWhite.Text = "БЕЛЫЙ ИГРОК";
+            this.labelWhite.Text = "WHITE PLAYER";
             // 
             // labelBlack
             // 
             this.labelBlack.AutoSize = true;
             this.labelBlack.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelBlack.Location = new System.Drawing.Point(658, 357);
+            this.labelBlack.Location = new System.Drawing.Point(663, 356);
             this.labelBlack.Name = "labelBlack";
-            this.labelBlack.Size = new System.Drawing.Size(329, 42);
+            this.labelBlack.Size = new System.Drawing.Size(311, 42);
             this.labelBlack.TabIndex = 2;
-            this.labelBlack.Text = "ЧЕРНЫЙ ИГРОК";
+            this.labelBlack.Text = "BLACK PLAYER";
             // 
             // comboFrom
             // 
@@ -73,6 +73,7 @@
             this.comboFrom.Name = "comboFrom";
             this.comboFrom.Size = new System.Drawing.Size(275, 45);
             this.comboFrom.TabIndex = 3;
+            this.comboFrom.SelectedIndexChanged += new System.EventHandler(this.comboFrom_SelectedIndexChanged);
             // 
             // comboTo
             // 
@@ -91,8 +92,9 @@
             this.buttonMove.Name = "buttonMove";
             this.buttonMove.Size = new System.Drawing.Size(275, 61);
             this.buttonMove.TabIndex = 5;
-            this.buttonMove.Text = "СДЕЛАТЬ ХОД";
+            this.buttonMove.Text = "MAKE A MOVE";
             this.buttonMove.UseVisualStyleBackColor = false;
+            this.buttonMove.Click += new System.EventHandler(this.buttonMove_Click);
             // 
             // Form1
             // 

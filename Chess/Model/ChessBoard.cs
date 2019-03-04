@@ -11,11 +11,25 @@
             {
                 for (int j = 0; j < 8; j++) //Идем по колонкам
                 {
-                    Fields[i, j] = new ChessField(i, j);
+                    ChessField field = new ChessField(i, j);
+                    field.Status = FieldStatus.EMPTY;
+                    Fields[i, j] = field;
                 }
             }
         }
 
+        public ChessField OccupyField(int row, char column, Color color)
+        {
+            ChessField field = GetField(row, column);
+            field.Status = color == Color.WHITE ? FieldStatus.OCCUPIED_WITH_WHITE : FieldStatus.OCCUPIED_WITH_BLACK;
+            return field;
+        }
+
+        public void EmptyField(ChessField field)
+        {
+            field.Status = FieldStatus.EMPTY;
+        }
+        
         public ChessField GetField(int row, char column)
         {
             int rowIndex = row - 1;

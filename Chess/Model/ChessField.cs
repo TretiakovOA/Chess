@@ -7,6 +7,7 @@ namespace Chess.Model
         public int Row { get; private set; }
         public char Column { get; private set; }
         public Color Color { get; private set; }
+        public FieldStatus Status { get; set; }
 
         public ChessField(int rowIndex, int columnIndex)
         {

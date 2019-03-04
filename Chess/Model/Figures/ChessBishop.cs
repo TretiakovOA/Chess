@@ -7,25 +7,31 @@
             if (color == Color.WHITE)
             {
                 CurrentField = isFirst ?
-                    board.GetField(1, 'C') : 
-                    board.GetField(1, 'F');
+                    board.OccupyField(1, 'C', Color.WHITE) : 
+                    board.OccupyField(1, 'F', Color.WHITE);
             }
             else
             {
                 CurrentField = isFirst ?
-                    board.GetField(8, 'C') : 
-                    board.GetField(8, 'F');
+                    board.OccupyField(8, 'C', Color.BLACK) : 
+                    board.OccupyField(8, 'F', Color.BLACK);
             }
         }
 
-        public override void Move()
+        public override char GetSymbol()
         {
-            
+            return Color == Color.WHITE ? '\u2657' : '\u265d';
         }
 
-        public override char GetSymbol(Color color)
+        public override void FindFieldsToMove(ChessBoard board)
         {
-            return color == Color.WHITE ? '\u2657' : '\u265d';
+            if (IsKilled) return;
+            FieldsToMove.Clear();
+            FieldStatus ownStatus = Color == Color.WHITE
+                ? FieldStatus.OCCUPIED_WITH_WHITE
+                : FieldStatus.OCCUPIED_WITH_BLACK;
+            FindFieldsUpwards(board, ownStatus);
+            FindFieldsDownwards(board, ownStatus);
         }
     }
 }
