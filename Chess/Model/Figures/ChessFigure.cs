@@ -4,7 +4,7 @@ namespace Chess.Model
 {
     public abstract class ChessFigure
     {
-        public Color Color { get; private set; }
+        public Color Color { get; }
         public ChessField CurrentField { get; set; }
         public List<ChessField> FieldsToMove { get; private set; }
         public List<ChessMove> PreviousMoves { get; set; }

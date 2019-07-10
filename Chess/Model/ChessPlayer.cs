@@ -8,7 +8,7 @@ namespace Chess.Model
 {
     public class ChessPlayer
     {
-        public Color Color { get; set; }
+        public Color Color { get; private set; }
         public ChessFigure[] Figures { get; private set; }
 
         public ChessPlayer(Color color, ChessBoard board)

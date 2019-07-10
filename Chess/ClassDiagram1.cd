@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Chess.Model.ChessBishop">
+    <Position X="9.25" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Figures\ChessBishop.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Chess.Model.ChessFigure">
+    <Position X="6" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAACEgICADAAEAAAAAAEAAAAAAAAAAABAgQAAAAA=</HashCode>
+      <FileName>Model\Figures\ChessFigure.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Chess.Model.ChessKing">
+    <Position X="5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIACBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Figures\ChessKing.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Chess.Model.ChessKnight">
+    <Position X="2.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Figures\ChessKnight.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Chess.Model.ChessPawn">
+    <Position X="8.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAABAAAAAAAAAAAAAAgAAAAAAAAAAAABAA=</HashCode>
+      <FileName>Model\Figures\ChessPawn.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Chess.Model.ChessQueen">
+    <Position X="7" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Figures\ChessQueen.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Chess.Model.ChessRook">
+    <Position X="3.75" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIACBCAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Figures\ChessRook.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

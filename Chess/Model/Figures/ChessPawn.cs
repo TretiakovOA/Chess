@@ -4,8 +4,8 @@ namespace Chess.Model
 {
     public class ChessPawn : ChessFigure
     {
-        public bool EnPassant { get; private set; } = false;
-        public int EnPassantMove = 0;
+        public bool EnPassant { get; private set; }
+        public int EnPassantMove { get; private set; }
         public ChessPawn(Color color, ChessBoard board, char position) : base(color)
         {
             CurrentField = color == Color.WHITE ? 
